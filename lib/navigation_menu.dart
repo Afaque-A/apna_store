@@ -16,29 +16,23 @@ class NavigationMenuScreen extends StatelessWidget {
     return Scaffold(
       body: Obx(() => controller.screen[controller.selectedIndex.value]),
       bottomNavigationBar: Obx(
-        () => ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(50),
-            topRight: Radius.circular(50),
-          ),
-          child: NavigationBar(
-            elevation: 0,
-            backgroundColor: UColors.white,
-            indicatorColor: UColors.black.withValues(alpha: 0.1),
-            selectedIndex: controller.selectedIndex.value,
-            onDestinationSelected: (int index) {
-              controller.selectedIndex.value = index;
-            },
-            destinations: [
-              NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-              NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-              NavigationDestination(
-                icon: Icon(Iconsax.heart),
-                label: 'Wishlist',
-              ),
-              NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
-            ],
-          ),
+        () => NavigationBar(
+          elevation: 0,
+          backgroundColor: UColors.white,
+          indicatorColor: UColors.black.withValues(alpha: 0.1),
+          selectedIndex: controller.selectedIndex.value,
+          onDestinationSelected: (int index) {
+            controller.selectedIndex.value = index;
+          },
+          destinations: [
+            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
+            NavigationDestination(
+              icon: Icon(Iconsax.heart),
+              label: 'Wishlist',
+            ),
+            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
+          ],
         ),
       ),
     );

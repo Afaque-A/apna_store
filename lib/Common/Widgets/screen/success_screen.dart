@@ -1,5 +1,4 @@
 import 'package:apna_store/Common/Widgets/button/elevated_button.dart';
-import 'package:apna_store/utils/constants/images.dart';
 import 'package:apna_store/utils/constants/sizes.dart';
 import 'package:apna_store/utils/constants/texts.dart';
 import 'package:apna_store/utils/helper/device_helpers.dart';
