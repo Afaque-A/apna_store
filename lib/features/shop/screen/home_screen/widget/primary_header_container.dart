@@ -1,13 +1,13 @@
 import 'package:apna_store/Common/Widgets/Circulor_container.dart';
 import 'package:apna_store/features/shop/screen/home_screen/widget/rounded_edge_container.dart';
 import 'package:apna_store/utils/constants/colors.dart';
-import 'package:apna_store/utils/helper/device_helpers.dart';
+import 'package:apna_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 Widget primaryHeaderContainer(BuildContext context, final Widget child) {
   return RoundedEdgeContainer(
     child: Container(
-      height: UDeviceHelper.getScreenHeight(context) * 0.4,
+      height: USizes.homePrimaryHeaderHeight,
 
       color: UColors.primary,
       child: Stack(
@@ -16,8 +16,8 @@ Widget primaryHeaderContainer(BuildContext context, final Widget child) {
             top: -170,
             right: -180,
             child: circulorContainer(
-              height: UDeviceHelper.getScreenHeight(context) * 0.4,
-              width: UDeviceHelper.getScreenHeight(context) * 0.4,
+              height: USizes.homePrimaryHeaderHeight,
+              width: USizes.homePrimaryHeaderHeight,
               backgroundColor: UColors.white.withValues(alpha: 0.1),
 
               context,
@@ -28,8 +28,8 @@ Widget primaryHeaderContainer(BuildContext context, final Widget child) {
             bottom: -50,
             right: -280,
             child: circulorContainer(
-              height: UDeviceHelper.getScreenHeight(context) * 0.4,
-              width: UDeviceHelper.getScreenHeight(context) * 0.4,
+              height: USizes.homePrimaryHeaderHeight,
+              width: USizes.homePrimaryHeaderHeight,
               backgroundColor: UColors.white.withValues(alpha: 0.1),
               context,
             ),
