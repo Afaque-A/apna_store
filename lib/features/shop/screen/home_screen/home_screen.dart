@@ -1,7 +1,9 @@
+import 'package:apna_store/Common/Widgets/Circulor_container.dart';
 import 'package:apna_store/Common/Widgets/appbar/app_bar.dart';
 import 'package:apna_store/Common/Widgets/cart/cart_icon.dart';
 import 'package:apna_store/Common/Widgets/searchbar/searchbar.dart';
 import 'package:apna_store/features/shop/screen/home_screen/widget/primary_header_container.dart';
+import 'package:apna_store/utils/constants/images.dart';
 import 'package:apna_store/utils/constants/sizes.dart';
 import 'package:apna_store/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +20,7 @@ class HomeScreen extends StatelessWidget {
           primaryHeaderContainer(
             context,
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 UAppBar(
                   title: Column(
@@ -40,9 +43,64 @@ class HomeScreen extends StatelessWidget {
 
                   actions: [CartIcon()],
                 ),
+                SizedBox(height: USizes.spaceBtwSections),
+                Padding(
+                  padding: const EdgeInsets.only(left: USizes.defaultSpace),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        UTexts.popularCategories,
+                        style: Theme.of(
+                          context,
+                        ).textTheme.headlineMedium!.apply(color: Colors.white),
+                      ),
+                      SizedBox(height: USizes.spaceBtwItems),
+                      SizedBox(
+                        height: 80,
+                        child: ListView.separated(
+                          separatorBuilder: (context, index) =>
+                              SizedBox(width: USizes.spaceBtwItems),
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 10,
+                          itemBuilder: (context, index) {
+                            return Column(
+                              children: [
+                                circulorContainer(
+                                  height: 56,
+                                  width: 56,
+                                  backgroundColor: Colors.white,
+                                  context,
+                                  child: Image.asset(
+                                    UImages.accountCreatedImage,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                SizedBox(height: USizes.spaceBtwItems / 2),
+                                SizedBox(
+                                  width: 55,
+                                  child: Text(
+                                    UTexts.popularCategories,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium!
+                                        .apply(color: Colors.white),
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
+
           Positioned(
             bottom: 0,
             left: USizes.spaceBtwItems,

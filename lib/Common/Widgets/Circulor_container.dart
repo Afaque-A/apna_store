@@ -9,6 +9,7 @@ Widget circulorContainer(
   final Color backgroundColor = UColors.white,
   final EdgeInsetsGeometry? padding,
   final EdgeInsetsGeometry? margin,
+  final Widget? child,
 }) {
   return Container(
     height: height,
@@ -19,5 +20,6 @@ Widget circulorContainer(
       borderRadius: BorderRadius.circular(borderRadius),
       color: backgroundColor,
     ),
+    child: child,
   );
 }

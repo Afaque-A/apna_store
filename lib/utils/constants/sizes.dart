@@ -1,7 +1,5 @@
-
-
-class USizes{
-// Padding and margin sizes
+class USizes {
+  // Padding and margin sizes
   static const double xs = 4.0; // extra small
   static const double sm = 8.0; // small
   static const double md = 16.0; // medium
@@ -55,7 +53,7 @@ class USizes{
   static const double gridViewSpacing = 16.0;
 
   // Card Sizes
-  static const double homePrimaryHeaderHeight = 320.0; // 320
+  static const double homePrimaryHeaderHeight = 340.0; // 320
   static const double storePrimaryHeaderHeight = 170.0; // 170
   static const double profilePrimaryHeaderHeight = 170.0; // 170
 
