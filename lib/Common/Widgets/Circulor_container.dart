@@ -5,7 +5,6 @@ Widget circulorContainer(
   BuildContext context, {
   final double height = 400,
   final double width = 400,
-  final double borderRadius = 400,
   final Color backgroundColor = UColors.white,
   final EdgeInsetsGeometry? padding,
   final EdgeInsetsGeometry? margin,
@@ -17,7 +16,7 @@ Widget circulorContainer(
     padding: padding,
     margin: margin,
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(borderRadius),
+      borderRadius: BorderRadius.circular(1000),
       color: backgroundColor,
     ),
     child: child,
