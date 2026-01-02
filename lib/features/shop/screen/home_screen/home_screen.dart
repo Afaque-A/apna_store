@@ -7,7 +7,6 @@ import 'package:apna_store/features/shop/controller/home/home_controller.dart';
 import 'package:apna_store/features/shop/screen/home_screen/widget/primary_header_container.dart';
 import 'package:apna_store/features/shop/screen/home_screen/widget/promo_slider.dart';
 import 'package:apna_store/features/shop/screen/home_screen/widget/uvertical_image_text.dart';
-import 'package:apna_store/utils/constants/colors.dart';
 import 'package:apna_store/utils/constants/images.dart';
 import 'package:apna_store/utils/constants/sizes.dart';
 import 'package:apna_store/utils/constants/texts.dart';
@@ -22,6 +21,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -119,11 +119,27 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(height: USizes.spaceBtwSections),
+                  SizedBox(height: USizes.spaceBtwItems),
                   SectionHeading(title: 'Popular Products', onPressed: () {}),
 
-                  SizedBox(height: USizes.spaceBtwItems),
-                  ProductCardVertical(),
+                  // SizedBox(height: USizes.spaceBtwItems),
+                  GridView.builder(
+                    padding: EdgeInsets.zero,
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: 10,
+
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+
+                      mainAxisSpacing: USizes.gridViewSpacing,
+                      crossAxisSpacing: USizes.gridViewSpacing,
+                      mainAxisExtent: 350,
+                    ),
+                    itemBuilder: (context, index) {
+                      return ProductCardVertical();
+                    },
+                  ),
                 ],
               ),
             ),

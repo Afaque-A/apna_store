@@ -11,7 +11,7 @@ class RoundedContainer extends StatelessWidget {
     this.radius = USizes.cardRadiusLg,
     this.showBorder = false,
     this.borderColor = UColors.borderPrimary,
-    this.backgroundColor = UColors.white,
+    this.backgroundColor = UColors.light,
     this.padding,
     this.margin,
   });

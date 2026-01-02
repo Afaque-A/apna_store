@@ -9,12 +9,12 @@ class OnbordingController extends GetxController {
   final pageController = PageController();
   RxInt currentPageIndex = 0.obs;
   // update page indicator when page chnages
-  void updatePageIndicator(index) {
+  void updatePageIndicator( int index) {
     currentPageIndex.value = index;
   }
 
   // jump to next  specific  page
-  void dotNavigationClick(index) {
+  void dotNavigationClick( int index) {
     pageController.jumpToPage(index);
   }
 
