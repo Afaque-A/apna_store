@@ -29,9 +29,9 @@ class HomeScreen extends StatelessWidget {
             Stack(
               children: [
                 SizedBox(height: USizes.homePrimaryHeaderHeight + 10),
-                primaryHeaderContainer(
-                  context,
-                  Column(
+                PrimaryHeaderContainer(
+                  height: USizes.homePrimaryHeaderHeight,
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       UAppBar(

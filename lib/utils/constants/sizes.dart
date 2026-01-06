@@ -7,7 +7,7 @@ class USizes {
   static const double xl = 32.0; //extra large
 
   // Icon sizes
-  static const double iconXs = 12.0; // extra small
+  static const double iconXs = 18.0; // extra small
   static const double iconSm = 16.0; // small
   static const double iconMd = 24.0; // medium
   static const double iconLg = 32.0; // large
