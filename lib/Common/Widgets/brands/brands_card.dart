@@ -7,13 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BrandsCard extends StatelessWidget {
-  const BrandsCard({super.key});
+  const BrandsCard({super.key, this.showBorder = true});
+
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {
     return RoundedContainer(
       width: USizes.brandCardWidth,
-      showBorder: true,
+      height: USizes.brandCardHeight,
+      showBorder: showBorder,
       padding: EdgeInsets.all(USizes.sm),
       backgroundColor: Colors.transparent,
       child: Row(
